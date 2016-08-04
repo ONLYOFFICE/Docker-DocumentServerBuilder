@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER Ascensio System SIA <support@onlyoffice.com>
 
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive QT_SELECT=opt-qt55
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive QT_SELECT=qt5
 
 RUN apt-get -y update && \
     apt-get install --force-yes -yq apt-transport-https locales software-properties-common curl && \
@@ -31,6 +31,8 @@ RUN apt-get -y update && \
         qt5-default \
         qtchooser \
         nodejs \
+        p7zip-full \
+        git \
         subversion && \
     npm install -g npm && \
     npm install -g grunt-cli && \
