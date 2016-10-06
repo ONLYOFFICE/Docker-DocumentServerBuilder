@@ -14,11 +14,7 @@ RUN apt-get -y update && \
         sed \
         dpkg-dev \
         debhelper \
-        bomstrip \
         libxml2-dev \
-        libboost-regex-dev \
-        libboost-system-dev \
-        libboost-filesystem-dev \
         libcurl4-gnutls-dev \
         libglib2.0-dev \
         libgdk-pixbuf2.0-dev \
