@@ -38,6 +38,7 @@ RUN apt-get -y update && \
     npm cache clean && \
     rm -rf /var/lib/apt/lists/*
 
+ADD clean.sh /app/onlyoffice/clean.sh
 ADD build.sh /app/onlyoffice/build.sh
 ADD package.sh /app/onlyoffice/package.sh
 
