@@ -32,10 +32,12 @@ RUN apt-get -y update && \
         nodejs \
         p7zip-full \
         git \
-        subversion && \
+        subversion \
+        python-pip && \
     npm install -g npm && \
     npm install -g grunt-cli && \
     npm cache clean && \
+    pip install awscli && \
     rm -rf /var/lib/apt/lists/*
 
 ADD clean.sh /app/onlyoffice/clean.sh
