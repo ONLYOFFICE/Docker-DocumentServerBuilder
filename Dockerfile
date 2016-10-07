@@ -14,6 +14,9 @@ RUN apt-get -y update && \
         sed \
         dpkg-dev \
         debhelper \
+        createrepo \
+        dpkg-dev \
+        debhelper \
         libxml2-dev \
         libcurl4-gnutls-dev \
         libglib2.0-dev \
@@ -36,6 +39,7 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/*
 
 ADD build.sh /app/onlyoffice/build.sh
+ADD package.sh /app/onlyoffice/package.sh
 
 VOLUME /var/lib/onlyoffice
 
