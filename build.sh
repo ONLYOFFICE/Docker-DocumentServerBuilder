@@ -1,8 +1,14 @@
 #!/bin/bash
 
 BUILD_DIR=/var/lib/onlyoffice
+MODULES=(core sdkjs server)
+
+if [ ! $# -eq 0 ]; then
+  MODULES=($@)
+fi
 
 cd $BUILD_DIR/core/Common/3dParty && ./make.sh
-cd $BUILD_DIR/core && make all
-cd $BUILD_DIR/sdkjs && make all
-cd $BUILD_DIR/server && make all build-date
+
+for i in ${MODULES[@]}; do
+  cd $BUILD_DIR/${i} && make
+done

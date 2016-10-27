@@ -1,7 +1,13 @@
 #!/bin/bash
 
 BUILD_DIR=/var/lib/onlyoffice
+MODULES=(core sdkjs server)
 
-cd $BUILD_DIR/core && make clean
-cd $BUILD_DIR/sdkjs && make clean
-cd $BUILD_DIR/server && make clean
+if [ ! $# -eq 0 ]; then
+  MODULES=($@)
+fi
+
+for i in ${MODULES[@]}; do
+  cd $BUILD_DIR/${i} && make clean
+done
+
