@@ -7,8 +7,9 @@ if [ ! $# -eq 0 ]; then
   MODULES=($@)
 fi
 
-cd $BUILD_DIR/core/Common/3dParty && ./make.sh
-
 for i in ${MODULES[@]}; do
+  if [ ${i} = "core" ]; then
+    cd $BUILD_DIR/core/Common/3dParty && ./make.sh
+  fi
   cd $BUILD_DIR/${i} && make
 done
