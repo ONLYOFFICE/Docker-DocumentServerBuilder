@@ -40,10 +40,8 @@ RUN apt-get -y update && \
     pip install awscli && \
     rm -rf /var/lib/apt/lists/*
 
-ADD clean.sh /app/onlyoffice/clean.sh
 ADD build.sh /app/onlyoffice/build.sh
 ADD package.sh /app/onlyoffice/package.sh
-ADD build_core.sh /app/onlyoffice/build_core.sh
 
 VOLUME /var/lib/onlyoffice
 
