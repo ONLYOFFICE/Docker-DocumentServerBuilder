@@ -41,7 +41,6 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/*
 
 ADD build.sh /app/onlyoffice/build.sh
-ADD package.sh /app/onlyoffice/package.sh
 
 VOLUME /var/lib/onlyoffice
 
