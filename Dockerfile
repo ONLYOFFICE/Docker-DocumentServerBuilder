@@ -1,11 +1,11 @@
 FROM ubuntu:trusty
 MAINTAINER Ascensio System SIA <support@onlyoffice.com>
 
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive QT_SELECT=opt-qt55
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive QT_SELECT=qt5
 
 RUN apt-get -y update && \
     apt-get install --force-yes -yq apt-transport-https locales software-properties-common curl && \
-    curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     locale-gen en_US.UTF-8 && \
     apt-get -y update && \
     apt-get install --force-yes -yq \
@@ -14,11 +14,10 @@ RUN apt-get -y update && \
         sed \
         dpkg-dev \
         debhelper \
-        bomstrip \
+        createrepo \
+        dpkg-dev \
+        debhelper \
         libxml2-dev \
-        libboost-regex-dev \
-        libboost-system-dev \
-        libboost-filesystem-dev \
         libcurl4-gnutls-dev \
         libglib2.0-dev \
         libgdk-pixbuf2.0-dev \
@@ -31,10 +30,14 @@ RUN apt-get -y update && \
         qt5-default \
         qtchooser \
         nodejs \
-        subversion && \
+        p7zip-full \
+        git \
+        subversion \
+        python-pip && \
     npm install -g npm && \
     npm install -g grunt-cli && \
     npm cache clean && \
+    pip install awscli && \
     rm -rf /var/lib/apt/lists/*
 
 ADD build.sh /app/onlyoffice/build.sh
