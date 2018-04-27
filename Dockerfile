@@ -33,6 +33,7 @@ RUN apt-get -y update && \
         p7zip-full \
         git \
         subversion \
+        symlinks \
         python-pip && \
     npm install -g npm && \
     npm install -g grunt-cli && \
