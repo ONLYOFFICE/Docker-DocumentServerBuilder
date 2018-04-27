@@ -35,7 +35,6 @@ RUN apt-get -y update && \
         subversion \
         symlinks \
         python-pip && \
-    npm install -g npm && \
     npm install -g grunt-cli && \
     npm cache clean && \
     pip install awscli && \
