@@ -10,6 +10,7 @@ RUN apt-get -y update && \
     apt-get -y update && \
     apt-get install --force-yes -yq \
         wget \
+        autoconf \
         build-essential \
         sed \
         dpkg-dev \
