@@ -9,33 +9,33 @@ RUN apt-get -y update && \
     locale-gen en_US.UTF-8 && \
     apt-get -y update && \
     apt-get install --force-yes -yq \
-        wget \
         autoconf \
         build-essential \
-        sed \
-        dpkg-dev \
-        debhelper \
         createrepo \
-        dpkg-dev \
         debhelper \
-        libxml2-dev \
-        libcurl4-gnutls-dev \
-        libglib2.0-dev \
-        libgdk-pixbuf2.0-dev \
-        libgtkglext1-dev \
+        debhelper \
+        default-jre \
+        dpkg-dev \
+        dpkg-dev \
+        git \
         libatk1.0-dev \
         libcairo2-dev \
-        libxss-dev \
+        libcurl4-gnutls-dev \
         libgconf2-dev \
-        default-jre \
-        qt5-default \
-        qtchooser \
+        libgdk-pixbuf2.0-dev \
+        libglib2.0-dev \
+        libgtkglext1-dev \
+        libxml2-dev \
+        libxss-dev \
         nodejs \
         p7zip-full \
-        git \
+        python-pip \
+        qt5-default \
+        qtchooser \
+        sed \
         subversion \
         symlinks \
-        python-pip && \
+        wget && \
     npm install -g grunt-cli && \
     npm cache clean && \
     pip install awscli && \
