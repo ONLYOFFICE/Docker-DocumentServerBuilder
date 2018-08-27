@@ -38,7 +38,7 @@ RUN apt-get -y update && \
         symlinks \
         wget && \
     npm install -g grunt-cli && \
-    npm cache clean && \
+    npm cache clean --force && \
     pip install awscli && \
     rm -rf /var/lib/apt/lists/*
 
