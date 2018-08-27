@@ -5,7 +5,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=nonint
 
 RUN apt-get -y update && \
     apt-get install --force-yes -yq apt-transport-https locales software-properties-common curl && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     locale-gen en_US.UTF-8 && \
     apt-get -y update && \
     apt-get install --force-yes -yq \
