@@ -25,6 +25,7 @@ RUN apt-get -y update && \
         libgdk-pixbuf2.0-dev \
         libglib2.0-dev \
         libgtkglext1-dev \
+        libssl-dev \
         libtool \
         libxml2-dev \
         libxss-dev \
