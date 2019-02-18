@@ -5,7 +5,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=nonint
 
 RUN apt-get -y update && \
     apt-get install --force-yes -yq apt-transport-https locales software-properties-common curl && \
-    add-apt-repository ppa:jonathonf/python-2.7
+    add-apt-repository ppa:jonathonf/python-2.7 && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     locale-gen en_US.UTF-8 && \
     apt-get -y update && \
